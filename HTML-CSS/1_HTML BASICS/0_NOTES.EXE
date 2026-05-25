@@ -1,0 +1,95 @@
+1. HTML Basics & Document Structure
+***********************************
+
+Definition: HTML (HyperText Markup Language) is the standard language used to create the structure of a webpage.
+
+1. <!DOCTYPE html>: Defines the document type and ensures the browser renders the page in standards-compliant mode.
+2. <html>: The root element that wraps all content on the page.
+3. <head>: Contains machine-readable information (metadata) about the page, like the title, scripts, and CSS stylesheets.
+4. <body>: Contains all the visible content of the webpage (text, images, links).
+
+__________________________________________________________________________________________________________________________________________________________________
+
+2. Text Formatting & Structure
+******************************
+
+1. Headings (<h1> to <h6>): Define structural headings. <h1> is the most important (used once per page for SEO), and <h6> is the least.
+2. Paragraph (<p>): Defines a block of text. Browsers automatically add space before and after a paragraph.
+3. Line Break (<br>): Creates a single line break without starting a new paragraph. It is an empty/self-closing element.
+4. Horizontal Rule (<hr>): Represents a thematic break (a horizontal line) between paragraph-level elements.
+5. Stylistic/Semantic Formatting:
+
+    -> <strong> and <b>: Bold text (<strong> implies semantic importance; <b> is purely visual).
+    -> <em> and <i>: Italic text (<em> implies emphasis; <i> is purely visual).
+    -> <mark>: Highlights text.
+    -> <small>: Renders smaller side-comments or legal text.
+
+__________________________________________________________________________________________________________________________________________________________________
+
+4. Lists & Tables
+*****************
+
+1. Unordered List (<ul>): Creates a bulleted list.
+2. Ordered List (<ol>): Creates a numbered list.
+3. List Item (<li>): Represents an item inside either a <ul> or <ol>.
+4. Description List (<dl>): Used for terms and descriptions. Uses <dt> (definition term) and <dd> (definition description).
+5. Tables (<table>): Organizes data into rows and columns.
+
+    -> <tr>: Defines a table row.
+    -> <th>: Defines a header cell (bold and centered by default).
+    -> <td>: Defines a standard data cell.
+    -> <thead>, <tbody>, <tfoot>: Structurally group the header, body, and footer of a table.
+
+__________________________________________________________________________________________________________________________________________________________________
+
+5. Forms & Inputs
+*****************
+
+1. Form (<form>): Acts as a container to collect user input. Uses attributes like action (where to send data) and method (GET or POST).
+2. Label (<label>): Provides a caption for form elements. The for attribute should match the id of the input for accessibility.
+3. Input (<input>): The most versatile form element. Its behavior changes based on the type attribute:
+
+    -> type="text", type="password", type="email", type="number"
+    -> type="radio" (single choice from a group), type="checkbox" (multiple choices)
+    -> type="submit" (button to send the form)
+
+4. Textarea (<textarea>): Allows multi-line text input.
+5. Dropdown (<select>): Creates a drop-down list, containing individual <option> elements.
+
+__________________________________________________________________________________________________________________________________________________________________
+
+6. Layout & Semantic HTML
+*************************
+1. Block-level Elements: Start on a new line and take up the full width available (e.g., <div>, <p>, <h1>, <li>).
+2. Inline Elements: Do not start on a new line and only take up as much width as necessary (e.g., <span>, <a>, <strong>, <img>).
+3. Non-Semantic Containers: * <div>: A block-level container used for layout and styling.
+
+    - > <span>: An inline container used to style specific text fragments.
+
+4. Semantic Elements (HTML5): Give clear meaning to the browser and search engines about the structure:
+
+    -> <header>: Top section containing logos or navigation.
+    -> <nav>: Defines a set of navigation links.
+    -> <main>: Specifies the dominant, unique content of the document.
+    -> <section>: Defines a thematic grouping of content.
+    -> <article>: Represents self-contained, reusable content (e.g., a blog post).
+    -> <aside>: Side content loosely related to the main text (e.g., sidebars).
+    -> <footer>: Bottom section containing copyrights or contact info.
+
+__________________________________________________________________________________________________________________________________________________________________
+
+7. Attributes, Meta Tags, & SEO
+*******************************
+
+1. Core Attributes:
+
+    -> id: A unique identifier for an element (used once per page).
+    -> class: A non-unique identifier used to group multiple elements for CSS/JS.
+    -> title: Adds a tooltip text when hovering over an element.
+
+2. Meta Tags (<meta>): Placed in the <head>, they provide data about the HTML document:
+
+    -> <meta charset="UTF-8">: Specifies the character encoding.
+    -> <meta name="viewport" content="width=device-width, initial-scale=1.0">: Makes the website responsive on mobile screens.
+    -> <meta name="description" content="...">: A brief summary used by search engines on search result pages.
+    

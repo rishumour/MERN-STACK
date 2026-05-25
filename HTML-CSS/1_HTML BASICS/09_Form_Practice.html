@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Application Form</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        h3 {
+            background-color: #ddd;
+            padding: 5px;
+            margin-top: 20px;
+        }
+
+        label {
+            display: inline-block;
+            width: 180px;
+            margin-top: 8px;
+        }
+
+        input[type="text"] {
+            width: 350px;
+            padding: 3px;
+        }
+
+        input.short-input {
+            width: 150px;
+        }
+
+        p {
+            margin: 10px 0 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JOB APPLICATION FORM</h1>
+    
+    <form>
+        <h3>PERSONAL INFORMATION</h3>
+        
+        <label>Name:</label> <input type="text"><br>
+        <label>Date of Birth:</label> <input type="text"><br>
+        <label>Address:</label> <input type="text"><br>
+        <label>City, State:</label> <input type="text"><br>
+        <label>Email Address:</label> <input type="text"><br>
+        <label>Phone Number:</label> <input type="text"><br>
+        <label>S.S.N:</label> <input type="text"><br>
+        <label>Position applied for:</label> <input type="text"><br>
+        <label>Date available:</label> <input type="text"><br>
+        
+        <label>Desired Pay:</label> 
+        <input type="text" class="short-input"> 
+        <input type="checkbox"> Hour 
+        <input type="checkbox"> Salary
+        <br>
+
+        <label>Employment desired:</label>
+        <input type="checkbox"> Full time
+        <input type="checkbox"> Part time
+        <input type="checkbox"> Seasonal
+        <br>
+
+        <h3>EMPLOYMENT ELIGIBILITY</h3>
+        
+        <p>Are you legally eligible to work in the U.S.? 
+            <input type="radio" name="legal"> Yes 
+            <input type="radio" name="legal"> No
+        </p>
+        
+        <p>Have you ever worked for this employer? 
+            <input type="radio" name="past-emp"> Yes 
+            <input type="radio" name="past-emp"> No
+        </p>
+        <label>If yes, write the start and end dates:</label> <input type="text"><br>
+
+        <p>Have you ever been convicted of a felony? 
+            <input type="radio" name="felony"> Yes 
+            <input type="radio" name="felony"> No
+        </p>
+        <label>If yes, please explain:</label> <input type="text"><br>
+
+        <h3>EDUCATION</h3>
+
+        <p><strong>High School:</strong></p>
+        <label>High School Name:</label> <input type="text"><br>
+        <label>City / State:</label> <input type="text"><br>
+        <label>From:</label> <input type="text"> 
+        <label>To:</label> <input type="text"><br>
+        <label>Graduate?</label> <input type="radio" name="hs-grad"> Yes <input type="radio" name="hs-grad"> No
+        <label>Diploma:</label> <input type="text"><br>
+
+        <p><strong>College:</strong></p>
+        <label>College Name:</label> <input type="text"><br>
+        <label>City / State:</label> <input type="text"><br>
+        <label>From:</label> <input type="text"> 
+        <label>To:</label> <input type="text"><br>
+        <label>Graduate?</label> <input type="radio" name="coll-grad"> Yes <input type="radio" name="coll-grad"> No
+        <label>Diploma:</label> <input type="text"><br>
+
+        <p><strong>Other Education:</strong></p>
+        <label>School Name:</label> <input type="text"><br>
+        <label>City / State:</label> <input type="text"><br>
+        <label>From:</label> <input type="text"> 
+        <label>To:</label> <input type="text"><br>
+        <label>Degree / Certification:</label> <input type="text"><br>
+
+        <br>
+        <input type="submit" value="Submit Form">
+    </form>
+
+</body>
+</html>

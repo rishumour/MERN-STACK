@@ -1,0 +1,228 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms in HTML</title>
+
+    <style>
+      input {
+        outline: none;
+        border: none;
+        border-bottom: 2px dotted;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Sports Physical Form</h2>
+
+    <form action="./7_Form_Action_Page.html" method="get">
+
+      <fieldset>
+        <legend>Athlete Information</legend>
+
+        <ul>
+          <li>
+            <label for="fname">First Name:</label>
+            <input
+              type="text"
+              id="fname"
+              name="fname"
+              placeholder="Enter your name..."
+            />
+          </li>
+          <li>
+            <label for="school_team">School/Team:</label>
+            <input
+              type="text"
+              id="school_team"
+              value = "Parul University"
+              name="school_team"
+              placeholder="Enter your school or Team"
+              readonly
+            />
+          </li>
+          <li>
+            <label for="sports">Sports:</label>
+            <input
+              type="text"
+              id="sports"
+              name="sport"
+              placeholder="Sports..."
+            />
+          </li>
+          <li>
+            <label for="parent_guardian">Parent/ Guardian Name:</label>
+            <input
+              type="text"
+              id="parent_guardian"
+              name="parent_guardian"
+              placeholder="Parent or Guardian.."
+              required
+            />
+          </li>
+
+          <li>
+            <label for="contact">Contact Number:</label>
+            <input
+              type="tel"
+              id="contact"
+              name="contact"
+              placeholder="Example: +91 525252521"
+              required
+            />
+          </li>
+        </ul>
+      </fieldset>
+
+      <fieldset>
+        <legend>Medical History for Athlete</legend>
+
+        <ul>
+          <li>
+            History Of Concussions:
+            <input
+              type="radio"
+              name="concussions"
+              id="concussions-yes"
+              value="concussions-yes"
+              required
+            />
+            <label for="concussions-yes">Yes</label>
+            <input
+              type="radio"
+              name="concussions"
+              id="concussions-no"
+              value="concussions-no"
+              required
+            />
+            <label for="concussions-no">No</label>
+          </li>
+          <li>
+            Previous Surgery?
+            <input
+              type="radio"
+              name="surgery"
+              id="surgery-yes"
+              value="surgery-yes"
+              required
+            />
+            <label for="surgery-yes">Yes</label>
+            <input
+              type="radio"
+              name="surgery"
+              id="surgery-no"
+              value="surgery-no"
+              required
+            />
+            <label for="surgery-no">No</label>
+          </li>
+          <li>
+            Any Bone fracture?
+            <input
+              type="radio"
+              name="bone_fracture"
+              id="bone_fracture-yes"
+              value="bone_fracture-yes"
+              required
+            />
+            <label for="bone_fracture-yes">Yes</label>
+            <input
+              type="radio"
+              name="bone_fracture"
+              id="bone_fracture-no"
+              value="bone_fracture-no"
+              required
+            />
+            <label for="bone_fracture-no">No</label>
+          </li>
+        </ul>
+      </fieldset>
+
+      <fieldset>
+        <legend>Date/Time</legend>
+        <ul>
+            <li>
+                <label for = "dob">DOB</label>
+                <input type="date" name = "dob" id = "dob" />
+
+            </li>
+            <li>
+                <label for = "tem">Time</label>
+                <input type="time" name = "tem" id = "tem" />
+                
+            </li>
+            <li>
+                <label for = "date-time">Time and Date</label>
+                <input
+                type = "datetime-local"
+                name = "date_tem"
+                id = "date_time"
+                required
+                >
+            </li>
+        </ul>
+      </fieldset>
+
+      <fieldset>
+        <legend>Text Area</legend>
+        <ul>
+            <li>
+                <p>Summary Of Your Last Operations: </p>
+                <textarea name = "txt" id = "txt" rows = "5" placeholder = "Type here...."></textarea>
+            </li>
+        </ul>
+      </fieldset>
+
+      <fieldset>
+        <legend>File Input</legend>
+        <label for = "med_file">Drop Your Last Medical Report:</label>
+        <input type = "file" name = "med_file" id = "med_file" accept = ".pdf, .html">
+      </fieldset>
+
+      <fieldset>
+        <legend>CheckBox</legend>
+        <ul>
+            <li>
+                <label name = "tnc_check" for = "tnc_check">You've read those Terms and Conditions</label>
+                <input type = "checkbox" name = "tnc_check" id = "tnc_check" value = "yes_tnc_check" required/>
+            </li>
+        </ul>
+      </fieldset>
+
+      <fieldset>
+        <legend>Number</legend>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" value="1">
+      </fieldset>
+
+      <fieldset>
+        <legend>Select</legend>
+        <label for = "states">Select your State</label>
+        <select name = "states" id = "states">
+          <option value = "gujarat">Gujarat</option>
+          <option value = "punjab">Punjab</option>
+          <option value = "assam">Assam</option>
+          <option value = "uttar_pradesh">Uttar Pradesh</option>
+          <option value = "bihar">Bihar</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Email</legend>
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" name="email">
+      </fieldset>
+
+      <fieldset>
+        <legend>Range</legend>
+        <label for="points">Points (between 0 and 10):</label>
+        <input type="range" id="points" name="points" min="0" max="10" value = "2">
+      </fieldset>
+
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link 
+        rel="shortcut icon"
+        href="https://vignette.wikia.nocookie.net/logopedia/images/f/fc/Amazon.com_Favicon_2.svg/revision/latest?cb=20160808095346"
+        type="image/x-icon"
+    />
+    <title>Online Shopping</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #eaeded;
+        }
+        #navbar-top nav {
+            background-color: rgb(19, 25, 33);
+            width: 100%;
+            height: 60px;
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+        #navbar-bottom {
+            background-color: rgb(35, 47, 62);
+            width: 100%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+        }
+        #navbar-bottom nav {
+            display: flex;
+            gap: 15px;
+        }
+        #navbar-bottom nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 5px;
+            border: 1px solid transparent;
+        }
+        #navbar-bottom nav a:hover {
+            border: 1px solid white;
+            border-radius: 2px;
+        }
+        #nav-logo {
+            background-color: transparent;
+            padding: 5px 10px;
+            margin-top: 5px;
+            border: 1px solid transparent;
+        }
+        #nav-logo:hover {
+            border: 1px solid white;
+            border-radius: 2px;
+        }
+        .nav-text {
+            color: white;
+            font-size: 14px;
+            padding: 5px;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+        .nav-text:hover {
+            border: 1px solid white;
+            border-radius: 2px;
+        }
+        .search-container {
+            display: flex;
+            flex: 1;
+            margin: 0 15px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        #search-bar {
+            flex: 1;
+            height: 40px;
+            border: none;
+            padding: 0 10px;
+            outline: none;
+            font-size: 15px;
+        }
+        .search-btn {
+            background-color: #febd69;
+            width: 45px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .search-btn:hover {
+            background-color: #f3a847;
+        }
+        main {
+            min-height: calc(100vh - 100px);
+        }
+        .hero {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(to bottom, transparent, #eaeded), url('https://m.media-amazon.com/images/I/61lwJy4B8PL._SX3000_.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            margin-top: -150px;
+            position: relative;
+            z-index: 10;
+        }
+        .product-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .product-card h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .product-card a {
+            color: #007185;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .product-card a:hover {
+            text-decoration: underline;
+            color: #c45500;
+        }
+        footer {
+            background-color: rgb(35, 47, 62);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .back-to-top {
+            background-color: #37475a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        .back-to-top:hover {
+            background-color: #485769;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <section id="navbar-top">
+            <nav>
+                <a href="https://www.amazon.in/" target="_blank">
+                    <img id="nav-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" width="100px" height="auto" alt="Amazon Logo">
+                </a>
+                <div class="nav-text">
+                    <div style="font-size: 12px; color: #ccc;">Delivering to Vadodara</div>
+                    <div style="font-weight: bold;">Update location</div>
+                </div>
+                <div class="search-container">
+                    <input type="text" name="search-bar" id="search-bar" placeholder="Search Amazon.in">
+                    <button class="search-btn" aria-label="Search">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+                </div>
+                <div class="nav-text">
+                    <div style="font-size: 12px;">Hello, sign in</div>
+                    <div style="font-weight: bold;">Account & Lists</div>
+                </div>
+                <div class="nav-text">
+                    <div style="font-size: 12px;">Returns</div>
+                    <div style="font-weight: bold;">& Orders</div>
+                </div>
+            </nav>
+        </section>
+        <section id="navbar-bottom">
+            <nav>
+                <a href="#">&#9776; All</a>
+                <a href="#">Fresh</a>
+                <a href="#">Amazon miniTV</a>
+                <a href="#">Sell</a>
+                <a href="#">Best Sellers</a>
+                <a href="#">Mobiles</a>
+                <a href="#">Today's Deals</a>
+                <a href="#">Customer Service</a>
+                <a href="#">Electronics</a>
+                <a href="#">New Releases</a>
+            </nav>
+        </section>
+    </header>
+    <main>
+        <div class="hero"></div>
+        <div class="products">
+            <div class="product-card">
+                <h2>Up to 70% off | Electronics clearance store</h2>
+                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg" alt="Electronics" style="height: auto;">
+                <a href="#">See more</a>
+            </div>
+            <div class="product-card">
+                <h2>Revamp your home in style</h2>
+                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2024/Gateway/BTFGW/PCQC/186x116_Home_furnishings_2._SY116_CB584596691_.jpg" alt="Home" style="height: auto;">
+                <a href="#">Explore all</a>
+            </div>
+            <div class="product-card">
+                <h2>Automotive essentials | Up to 60% off</h2>
+                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/B01M0GBGND---qc-pc-186x116._SY116_CB667322346_.jpg" alt="Automotive" style="height: auto;">
+                <a href="#">See more</a>
+            </div>
+            <div class="product-card">
+                <h2>Up to 60% off | Styles for men</h2>
+                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/Mac/PF_186-116._SY116_CB630054539_.jpg" alt="Fashion" style="height: auto;">
+                <a href="#">End of season sale</a>
+            </div>
+        </div>
+    </main>
+    <div class="back-to-top" onclick="window.scrollTo(0,0)">Back to top</div>
+    <footer>
+        <div style="margin-bottom: 20px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" width="80px" alt="Amazon Logo">
+        </div>
+        <div>
+            <p>&copy; 2026, Amazon.com, Inc. or its affiliates</p>
+        </div>
+    </footer>
+</body>
+</html>
