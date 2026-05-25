@@ -1,0 +1,95 @@
+CSS Fundamentals & Selectors
+*******************************
+
+1. Syntax: Composed of a selector and a declaration block. selector { property: value; }
+
+2. Selectors: * Basic: Universal (*), Type/Element (p), Class (.classname), ID (#idname).
+    -> Combinators: Space (descendant), > (child), + (adjacent sibling), ~ (general sibling).
+    -> Pseudo-classes: State-based selectors like :hover, :focus, :nth-child(), :not().
+    -> Pseudo-elements: Style specific parts of an element like ::before, ::after, ::first-letter.
+
+3. Specificity: The hierarchy that determines which rule wins. 
+4. Calculated as: Inline styles > IDs > Classes/Attributes/Pseudo-classes > Elements/Pseudo-elements.
+
+5. The Cascade & Inheritance: CSS applies styles from top to bottom. Some properties (like color and font-family) are inherited by child elements; others (like border and margin) are not.
+
+__________________________________________________________________________________________________________________________________________________________________
+
+The Box Model
+*************
+1. Components: Every visible HTML element is a rectangular box consisting of Content, Padding (inside space), Border, and Margin (outside space).
+2. Box Sizing: * box-sizing: content-box; (Default) Width/height apply only to content. Padding and borders add to the total size.
+
+    -> box-sizing: border-box; Width/height include padding and borders. Highly recommended for predictable layouts.
+
+__________________________________________________________________________________________________________________________________________________________________
+
+Typography & Text Styling
+*************************
+
+1. Fonts: Controlled via font-family (fallbacks are crucial), font-size (px, em, rem), font-weight, and font-style.
+2. Text Layout: Includes text-align (alignment), line-height (spacing between lines), letter-spacing (spacing between characters), and text-transform (uppercase/lowercase).
+3. Overflow: text-overflow: ellipsis; truncates long text beautifully when paired with white-space: nowrap; and overflow: hidden;
+
+__________________________________________________________________________________________________________________________________________________________________
+
+Layout Techniques
+*****************
+
+1. Display Property: Controls how an element behaves in the layout flow (block, inline, inline-block, none).
+2. Flexbox (1D Layout): Designed for aligning items in a single row or column.
+    
+    -> Parent (Flex Container): display: flex;, flex-direction, justify-content (main axis), align-items (cross axis), flex-wrap.
+    -> Children (Flex Items): flex-grow, flex-shrink, flex-basis, align-self.
+
+3.CSS Grid (2D Layout): Designed for complex rows and columns simultaneously.
+
+    -> Parent (Grid Container): display: grid;, grid-template-columns, grid-template-rows, gap.
+    -> Children (Grid Items): grid-column, grid-row, grid-area.
+
+4. Positioning: Moves elements out of the normal document flow.
+
+    -> static: Default flow.
+    -> relative: Positioned relative to its normal position.
+    -> absolute: Positioned relative to its nearest positioned ancestor.
+    -> fixed: Positioned relative to the viewport (stays put during scroll).
+    -> sticky: Toggles between relative and fixed based on scroll position.
+
+__________________________________________________________________________________________________________________________________________________________________
+
+Colors, Backgrounds, & Borders
+******************************
+
+1. Color Formats: Named colors (red), Hex (#ff0000), RGB/RGBA (rgba(255, 0, 0, 0.5) for opacity), and HSL/HSLA.
+2. Backgrounds: Customization using background-color, background-image, background-size (cover/contain), and background-position.
+3. Borders & Shadows: border-radius creates rounded corners. Visual depth is added using box-shadow (for elements) and text-shadow (for text).
+
+__________________________________________________________________________________________________________________________________________________________________
+
+Transitions, Animations, & Transforms
+*************************************
+
+1. Transforms: Modify elements in 2D or 3D space using translate() (move), rotate(), scale(), and skew().
+2. Transitions: Smoothly change CSS properties over a set duration. Requires transition-property, transition-duration, and transition-timing-function (e.g., ease-in-out).
+3. Animations: For complex, multi-step movements. Uses @keyframes to define states (0% to 100%) and the animation shorthand property on the element to execute it.
+
+__________________________________________________________________________________________________________________________________________________________________
+
+Responsive Design & Media Queries
+*********************************
+
+1. Media Queries: Apply conditional styles based on device characteristics (usually screen width).
+
+    Example: @media (max-width: 768px) { ... } targets mobile devices.
+
+2. Responsive Units: Moving away from fixed px to relative units like %, vw (viewport width), vh (viewport height), em (relative to parent font size), and rem (relative to root font size).
+3. Flexibility: Utilizing properties like max-width: 100%; on images to prevent layout breaking.
+
+__________________________________________________________________________________________________________________________________________________________________
+
+Modern CSS Features
+*******************
+
+1. CSS Variables (Custom Properties): Allow you to store values for reuse. Defined using --variable-name: value; and accessed via var(--variable-name).
+2. CSS Nesting: Modern native ability to nest selectors inside one another (similar to Sass/SCSS syntax).
+3. Tailored Functions: Built-in dynamic functions like calc() (mix math units like 100% - 20px), clamp(), min(), and max() for fluid layouts.
