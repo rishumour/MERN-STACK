@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secured Checkout | Premium Flipkart Clone</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body>
+
+  <!-- Glassmorphic Header -->
+  <header class="main-header">
+    <div class="container header-container">
+      <!-- Logo Area -->
+      <a href="index.html" class="logo-area">
+        <span class="logo-main">Flipkart</span>
+        <span class="logo-sub">Explore <span>Plus</span><i class="fa-solid fa-star" style="margin-left: 2px;"></i></span>
+      </a>
+
+      <!-- Search Bar Form -->
+      <form class="search-form">
+        <div class="search-bar-wrapper">
+          <input type="text" class="search-input" placeholder="Search for products, brands and more" aria-label="Search box">
+          <button type="submit" class="search-btn" aria-label="Search submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </form>
+
+      <!-- Nav Actions -->
+      <nav class="nav-actions">
+        <button class="login-btn">Login</button>
+        <a href="search.html" class="nav-link">Become a Seller</a>
+        <a href="cart.html" class="nav-link" style="position: relative;">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>Cart</span>
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Checkout Container -->
+  <main class="main-content container checkout-layout">
+    
+    <!-- Left Column Accordion Card Steps -->
+    <section class="checkout-steps-area" aria-label="Checkout details">
+      
+      <!-- Step 1: Login info prefilled -->
+      <div class="checkout-step-card">
+        <div class="step-header locked completed">
+          <div class="step-header-num">1</div>
+          <span class="step-header-title">Login Details</span>
+          <i class="fa-solid fa-circle-check step-header-check" style="display:block;"></i>
+        </div>
+        <div class="step-content collapsed" style="padding:16px 24px; font-size: 14px;">
+          <span>Rishav Kumar (+91 98765 43210) - logged in</span>
+        </div>
+      </div>
+
+      <!-- Step 2: Shipping Address Form details -->
+      <div class="checkout-step-card" id="step-card-address">
+        <div class="step-header">
+          <div class="step-header-num">2</div>
+          <span class="step-header-title">Delivery Address</span>
+          <i class="fa-solid fa-circle-check step-header-check"></i>
+        </div>
+        <div class="step-content" id="step-content-address">
+          <form id="checkout-address-form">
+            <div class="address-form-grid">
+              <div class="form-group">
+                <label for="addr-name" class="form-label">Full Name *</label>
+                <input type="text" id="addr-name" class="form-input" placeholder="e.g. Rishav Kumar" required>
+              </div>
+              <div class="form-group">
+                <label for="addr-phone" class="form-label">10-Digit Mobile Number *</label>
+                <input type="tel" id="addr-phone" class="form-input" pattern="[0-9]{10}" placeholder="e.g. 9876543210" required>
+              </div>
+              <div class="form-group">
+                <label for="addr-pin" class="form-label">Pincode *</label>
+                <input type="text" id="addr-pin" class="form-input" pattern="[0-9]{6}" placeholder="e.g. 400001" required>
+              </div>
+              <div class="form-group">
+                <label for="addr-locality" class="form-label">Locality</label>
+                <input type="text" id="addr-locality" class="form-input" placeholder="e.g. Nariman Point">
+              </div>
+              <div class="form-group full-width">
+                <label for="addr-street" class="form-label">Address (Area and Street) *</label>
+                <input type="text" id="addr-street" class="form-input" placeholder="e.g. Flat 102, Building A, Main Road" required>
+              </div>
+            </div>
+
+            <!-- Radio types -->
+            <div class="radio-group-row">
+              <span class="form-label" style="margin-top:2px;">Address Type:</span>
+              <label class="radio-option">
+                <input type="radio" name="addr-type" value="home" checked>
+                <span>Home (All day delivery)</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="addr-type" value="work">
+                <span>Work (Delivery between 10 AM - 5 PM)</span>
+              </label>
+            </div>
+
+            <button type="submit" class="checkout-submit-btn">Save and Deliver Here</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Step 3: Payment Options accordion details -->
+      <div class="checkout-step-card locked" id="step-card-payment">
+        <div class="step-header locked">
+          <div class="step-header-num">3</div>
+          <span class="step-header-title">Payment Options</span>
+          <i class="fa-solid fa-circle-check step-header-check"></i>
+        </div>
+        <div class="step-content collapsed" id="step-content-payment">
+          <div class="payment-options-list">
+            
+            <!-- UPI Mock payment details -->
+            <div class="payment-selector-item">
+              <div class="payment-selector-header">
+                <input type="radio" name="pay-method" id="pay-upi" value="upi">
+                <label for="pay-upi">UPI (Google Pay, PhonePe, BHIM)</label>
+              </div>
+              <div class="payment-selector-body">
+                <div class="upi-qr-wrapper">
+                  <!-- Generating mock QR -->
+                  <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=upi://pay?pa=flipkart@ybl%26pn=Flipkart%26mc=5411" alt="Payment QR Code">
+                  <div class="upi-qr-desc">
+                    <p style="font-weight: 700; margin-bottom: 4px; color: var(--text-main);">Scan QR to Pay Instantly</p>
+                    <p>Open any UPI App on your phone to scan the code. Confirm order after scanning completes.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Payment Mock details -->
+            <div class="payment-selector-item">
+              <div class="payment-selector-header">
+                <input type="radio" name="pay-method" id="pay-card" value="card">
+                <label for="pay-card">Credit / Debit / ATM Card</label>
+              </div>
+              <div class="payment-selector-body">
+                <div class="address-form-grid" style="margin-bottom:0;">
+                  <div class="form-group full-width">
+                    <label for="card-num" class="form-label">Card Number</label>
+                    <input type="text" id="card-num" class="form-input" placeholder="e.g. 4321 8904 2310 9843" maxlength="19">
+                  </div>
+                  <div class="card-expiry-row full-width">
+                    <div class="form-group">
+                      <label class="form-label">Expiry MM</label>
+                      <input type="number" class="form-input" min="1" max="12" placeholder="MM">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Expiry YY</label>
+                      <input type="number" class="form-input" min="26" max="40" placeholder="YY">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">CVV</label>
+                      <input type="password" class="form-input" maxlength="3" placeholder="***">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cash on Delivery Details -->
+            <div class="payment-selector-item">
+              <div class="payment-selector-header">
+                <input type="radio" name="pay-method" id="pay-cod" value="cod">
+                <label for="pay-cod">Cash on Delivery</label>
+              </div>
+              <div class="payment-selector-body">
+                <p style="font-size: 13px; color: var(--text-muted);">
+                  Please pay in cash or via card reader upon arrival of packages. Pay online for complete contact-less delivery features.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Confirm Order CTA -->
+          <button class="btn-secondary" id="confirm-order-btn" style="margin-top:20px; font-size:15px; width:100%; border-radius:4px;" disabled>
+            Confirm and Place Order
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Right Column Price summary details card -->
+    <aside class="pricing-sidebar" aria-label="Pricing summary">
+      <div class="pricing-sidebar-header">Price Details</div>
+      <div class="pricing-breakdown">
+        <div class="pricing-row">
+          <span id="checkout-items-count">Price (0 items)</span>
+          <span id="checkout-list-price">₹0</span>
+        </div>
+        <div class="pricing-row">
+          <span>Discount Offer</span>
+          <span id="checkout-discount" style="color:var(--success);">- ₹0</span>
+        </div>
+        <div class="pricing-row">
+          <span>Delivery Charges</span>
+          <span id="checkout-delivery">FREE</span>
+        </div>
+        <div class="pricing-row total-amount-row" style="margin-bottom:0;">
+          <span>Total Amount</span>
+          <span id="checkout-final-amount">₹0</span>
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- Fullscreen confirmation success modal overlay -->
+  <div class="success-modal-overlay" id="success-modal" aria-hidden="true">
+    <div class="success-modal-card">
+      <canvas id="confetti-canvas"></canvas>
+      
+      <!-- Animated Drawing Checkmark SVG -->
+      <svg class="success-checkmark-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+        <circle class="checkmark-circle" cx="26" cy="26" r="25" />
+        <path class="checkmark-check" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+      </svg>
+      
+      <h2 class="success-title">Order Placed Successfully!</h2>
+      <p class="success-desc">
+        Thank you for shopping with us! Your order is secured and has been passed down to our logistics partners.
+      </p>
+      
+      <!-- Order ID tracking -->
+      <div class="success-orderId">Order Tracking ID: <span id="tracking-id-lbl">...</span></div>
+      
+      <!-- Countdown timer -->
+      <div class="success-countdown-txt" id="success-countdown">Redirecting to homepage in 5 seconds...</div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="main-footer">
+    <div class="container footer-top">
+      <div class="footer-column">
+        <h4>About</h4>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press Stories</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">Payments</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Cancellation & Returns</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Consumer Policy</h4>
+        <ul>
+          <li><a href="#">Return Policy</a></li>
+          <li><a href="#">Terms Of Use</a></li>
+          <li><a href="#">Security</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+      <div class="footer-column border-left">
+        <h4>Mail Us:</h4>
+        <p style="line-height: 1.6; margin-top: 8px;">
+          Flipkart Internet Private Limited,<br>
+          Buildings Alyssa, Begonia &<br>
+          Clove Embassy Tech Village,<br>
+          Outer Ring Road, Bengaluru, 560103,<br>
+          Karnataka, India
+        </p>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <div class="footer-bottom-links">
+        <a href="#"><i class="fa-solid fa-briefcase"></i> Become a Seller</a>
+        <a href="#"><i class="fa-solid fa-star"></i> Advertise</a>
+        <a href="#"><i class="fa-solid fa-gift"></i> Gift Cards</a>
+        <a href="#"><i class="fa-solid fa-circle-question"></i> Help Center</a>
+      </div>
+      <div class="payment-methods">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/RuPay.svg" alt="RuPay">
+      </div>
+      <p style="margin-top: 16px; width: 100%; text-align: center; font-size: 11px;">
+        © 2026 Flipkart Premium Clone. All rights reserved. Designed for presentation.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/cart-system.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

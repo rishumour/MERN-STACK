@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results | Premium Flipkart Clone</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/search.css">
+</head>
+<body>
+
+  <!-- Glassmorphic Header -->
+  <header class="main-header">
+    <div class="container header-container">
+      <!-- Logo Area -->
+      <a href="index.html" class="logo-area">
+        <span class="logo-main">Flipkart</span>
+        <span class="logo-sub">Explore <span>Plus</span><i class="fa-solid fa-star" style="margin-left: 2px;"></i></span>
+      </a>
+
+      <!-- Search Bar Form -->
+      <form class="search-form">
+        <div class="search-bar-wrapper">
+          <input type="text" class="search-input" placeholder="Search for products, brands and more" aria-label="Search box">
+          <button type="submit" class="search-btn" aria-label="Search submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </form>
+
+      <!-- Nav Actions -->
+      <nav class="nav-actions">
+        <button class="login-btn">Login</button>
+        <a href="search.html" class="nav-link">Become a Seller</a>
+        <a href="cart.html" class="nav-link" style="position: relative;">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>Cart</span>
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Search Container -->
+  <main class="main-content container search-page-layout">
+    
+    <!-- Left Sidebar Filter Menu -->
+    <aside class="filters-sidebar" aria-label="Product filters">
+      <div class="filters-header">
+        <span>Filters</span>
+        <span class="clear-filters-btn">CLEAR ALL</span>
+      </div>
+
+      <!-- Categories Filter -->
+      <div class="filter-section">
+        <h3 class="filter-title">Categories</h3>
+        <ul class="filter-category-list">
+          <li class="filter-category-item" data-category="Mobiles">
+            <span>Mobiles</span>
+            <span class="filter-category-count">(3)</span>
+          </li>
+          <li class="filter-category-item" data-category="Electronics">
+            <span>Electronics</span>
+            <span class="filter-category-count">(3)</span>
+          </li>
+          <li class="filter-category-item" data-category="Fashion">
+            <span>Fashion</span>
+            <span class="filter-category-count">(3)</span>
+          </li>
+          <li class="filter-category-item" data-category="Home & Furniture">
+            <span>Home & Living</span>
+            <span class="filter-category-count">(2)</span>
+          </li>
+          <li class="filter-category-item" data-category="Appliances">
+            <span>Appliances</span>
+            <span class="filter-category-count">(1)</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Price Budget Range Filter -->
+      <div class="filter-section">
+        <h3 class="filter-title">Price Range</h3>
+        <div class="price-range-wrapper">
+          <div class="range-labels">
+            <span>Min</span>
+            <span id="price-max-label">₹2,00,000</span>
+          </div>
+          <input type="range" id="price-slider" class="range-input" min="2000" max="200000" step="2000" value="200000">
+          <div class="range-labels" style="color:var(--text-muted); font-size: 11px;">
+            <span>₹2,000</span>
+            <span>₹2,00,000+</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Customer Ratings Filter -->
+      <div class="filter-section">
+        <h3 class="filter-title">Customer Ratings</h3>
+        <label class="rating-checkbox-item">
+          <input type="checkbox" class="rating-checkbox" value="4">
+          <span>4★ & above</span>
+        </label>
+        <label class="rating-checkbox-item">
+          <input type="checkbox" class="rating-checkbox" value="3">
+          <span>3★ & above</span>
+        </label>
+      </div>
+
+      <!-- Assurance Brand Tag Filter -->
+      <div class="filter-section" style="border-bottom:none; margin-bottom:0;">
+        <h3 class="filter-title">F-Assured Quality</h3>
+        <label class="rating-checkbox-item">
+          <input type="checkbox" checked disabled style="opacity: 0.5;">
+          <img src="https://img1a.flixcart.com/www/linchpin/fk-cp-zx/img/fa_627cc9.png" style="height:16px;" alt="Flipkart Assured">
+        </label>
+      </div>
+    </aside>
+
+    <!-- Right Results Panel -->
+    <section class="search-results-area" aria-label="Search results">
+      <div class="results-sorting-header">
+        <h1 class="results-query-summary">Showing products...</h1>
+        <!-- Sorting Toggles -->
+        <div class="sorting-tabs-row">
+          <span>Sort By</span>
+          <button class="sort-tab active" data-sort="popularity">Popularity</button>
+          <button class="sort-tab" data-sort="priceAsc">Price -- Low to High</button>
+          <button class="sort-tab" data-sort="priceDesc">Price -- High to Low</button>
+          <button class="sort-tab" data-sort="ratingDesc">Customer Ratings</button>
+        </div>
+      </div>
+
+      <!-- Products Row Listings Container -->
+      <div class="listings-list">
+        <!-- JS inserts rows -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="main-footer">
+    <div class="container footer-top">
+      <div class="footer-column">
+        <h4>About</h4>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press Stories</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">Payments</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Cancellation & Returns</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Consumer Policy</h4>
+        <ul>
+          <li><a href="#">Return Policy</a></li>
+          <li><a href="#">Terms Of Use</a></li>
+          <li><a href="#">Security</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+      <div class="footer-column border-left">
+        <h4>Mail Us:</h4>
+        <p style="line-height: 1.6; margin-top: 8px;">
+          Flipkart Internet Private Limited,<br>
+          Buildings Alyssa, Begonia &<br>
+          Clove Embassy Tech Village,<br>
+          Outer Ring Road, Bengaluru, 560103,<br>
+          Karnataka, India
+        </p>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <div class="footer-bottom-links">
+        <a href="#"><i class="fa-solid fa-briefcase"></i> Become a Seller</a>
+        <a href="#"><i class="fa-solid fa-star"></i> Advertise</a>
+        <a href="#"><i class="fa-solid fa-gift"></i> Gift Cards</a>
+        <a href="#"><i class="fa-solid fa-circle-question"></i> Help Center</a>
+      </div>
+      <div class="payment-methods">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/RuPay.svg" alt="RuPay">
+      </div>
+      <p style="margin-top: 16px; width: 100%; text-align: center; font-size: 11px;">
+        © 2026 Flipkart Premium Clone. All rights reserved. Designed for presentation.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/cart-system.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>

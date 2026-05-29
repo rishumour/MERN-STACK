@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart | Premium Flipkart Clone</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+
+  <!-- Glassmorphic Header -->
+  <header class="main-header">
+    <div class="container header-container">
+      <!-- Logo Area -->
+      <a href="index.html" class="logo-area">
+        <span class="logo-main">Flipkart</span>
+        <span class="logo-sub">Explore <span>Plus</span><i class="fa-solid fa-star" style="margin-left: 2px;"></i></span>
+      </a>
+
+      <!-- Search Bar Form -->
+      <form class="search-form">
+        <div class="search-bar-wrapper">
+          <input type="text" class="search-input" placeholder="Search for products, brands and more" aria-label="Search box">
+          <button type="submit" class="search-btn" aria-label="Search submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </form>
+
+      <!-- Nav Actions -->
+      <nav class="nav-actions">
+        <button class="login-btn">Login</button>
+        <a href="search.html" class="nav-link">Become a Seller</a>
+        <a href="cart.html" class="nav-link" style="position: relative;">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>Cart</span>
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Cart Container -->
+  <main class="main-content container">
+    
+    <!-- Empty Cart Card Holder -->
+    <div id="empty-cart-container" style="display:none;"></div>
+    
+    <!-- Active Items Layout Grid -->
+    <div class="cart-layout" aria-label="Active cart items grid">
+      <!-- Left List Column -->
+      <section class="cart-items-panel" aria-label="Shopping items">
+        <div class="cart-header">
+          <span class="cart-header-title">Flipkart Cart</span>
+          <span style="font-size: 13px; color: var(--text-muted); font-weight: 500;">Deliver to: <strong>Mumbai - 400001</strong></span>
+        </div>
+        
+        <!-- Cart Items List container -->
+        <div class="cart-items-list">
+          <!-- JS inserts items dynamically -->
+        </div>
+        
+        <!-- Place Order Sticky Row -->
+        <div class="cart-footer-bar">
+          <button class="place-order-btn" id="place-order-btn" aria-label="Place order checkout">Place Order</button>
+        </div>
+      </section>
+
+      <!-- Right Pricing breakdown Sidebar -->
+      <aside class="pricing-sidebar" aria-label="Pricing summary">
+        <div class="pricing-sidebar-header">Price Details</div>
+        
+        <!-- Rows calculations -->
+        <div class="pricing-breakdown">
+          <div class="pricing-row">
+            <span id="total-items-label">Price (0 items)</span>
+            <span id="total-list-price">₹0</span>
+          </div>
+          <div class="pricing-row">
+            <span>Discount Offer</span>
+            <span id="total-discount" style="color:var(--success);">- ₹0</span>
+          </div>
+          <div class="pricing-row">
+            <span>Delivery Charges</span>
+            <span id="delivery-charges" style="color:var(--success);">FREE</span>
+          </div>
+          
+          <!-- Final Paid Total -->
+          <div class="pricing-row total-amount-row">
+            <span>Total Amount</span>
+            <span id="final-total-amount">₹0</span>
+          </div>
+        </div>
+        
+        <!-- Green savings header -->
+        <div class="price-saving-banner" id="savings-banner" style="display:none;">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>You will save money on this order!</span>
+        </div>
+      </aside>
+    </div>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="main-footer">
+    <div class="container footer-top">
+      <div class="footer-column">
+        <h4>About</h4>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press Stories</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">Payments</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Cancellation & Returns</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Consumer Policy</h4>
+        <ul>
+          <li><a href="#">Return Policy</a></li>
+          <li><a href="#">Terms Of Use</a></li>
+          <li><a href="#">Security</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+      <div class="footer-column border-left">
+        <h4>Mail Us:</h4>
+        <p style="line-height: 1.6; margin-top: 8px;">
+          Flipkart Internet Private Limited,<br>
+          Buildings Alyssa, Begonia &<br>
+          Clove Embassy Tech Village,<br>
+          Outer Ring Road, Bengaluru, 560103,<br>
+          Karnataka, India
+        </p>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <div class="footer-bottom-links">
+        <a href="#"><i class="fa-solid fa-briefcase"></i> Become a Seller</a>
+        <a href="#"><i class="fa-solid fa-star"></i> Advertise</a>
+        <a href="#"><i class="fa-solid fa-gift"></i> Gift Cards</a>
+        <a href="#"><i class="fa-solid fa-circle-question"></i> Help Center</a>
+      </div>
+      <div class="payment-methods">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/RuPay.svg" alt="RuPay">
+      </div>
+      <p style="margin-top: 16px; width: 100%; text-align: center; font-size: 11px;">
+        © 2026 Flipkart Premium Clone. All rights reserved. Designed for presentation.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/cart-system.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>
