@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Web Dev Curriculum</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav-container">
+      <div class="brand">WebBasics</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#html-core">HTML Core</a></li>
+          <li><a href="#css-box-model">CSS Box Model</a></li>
+          <li><a href="#flexbox">Flexbox</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    
+    <section class="hero card">
+      <h1>Welcome to Web Basics</h1>
+      <p>This is a simplified, easy-to-read guide to understanding the fundamentals of HTML and CSS. No complex tricks, just standard web practices.</p>
+    </section>
+
+    <section id="html-core" class="chapter">
+      <h2>1. HTML Document Structure</h2>
+      <p>Every HTML page consists of nested semantic blocks. Here is the standard anatomy of a webpage:</p>
+      
+      <div class="card code-box">
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;...&lt;/header&gt;
+    &lt;main&gt;
+      &lt;h1&gt;Main Heading&lt;/h1&gt;
+      &lt;p&gt;Paragraph text goes here.&lt;/p&gt;
+    &lt;/main&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+    </section>
+
+    <section id="css-box-model" class="chapter">
+      <h2>2. The CSS Box Model</h2>
+      <p>Every element in a document is a rectangular box. Understanding how margins, borders, paddings, and contents add up is the core of web styling.</p>
+
+      <div class="card box-model-diagram">
+        <div class="box margin">
+          <strong>Margin</strong> (Outer spacing)
+          <div class="box border">
+            <strong>Border</strong> (The edge)
+            <div class="box padding">
+              <strong>Padding</strong> (Inner spacing)
+              <div class="box content">
+                <strong>Content</strong> (Text/Images)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="flexbox" class="chapter">
+      <h2>3. Flexbox Layouts</h2>
+      <p>Flexbox is a layout module designed to align and distribute space among items in a container.</p>
+
+      <div class="card flex-demo">
+        <div class="demo-sidebar">
+          <h3>Common Properties</h3>
+          <ul>
+            <li><code>display: flex;</code></li>
+            <li><code>flex-direction: row | column;</code></li>
+            <li><code>justify-content: center;</code></li>
+            <li><code>align-items: center;</code></li>
+          </ul>
+        </div>
+        
+        <div class="demo-canvas">
+          <div class="flex-item">1</div>
+          <div class="flex-item">2</div>
+          <div class="flex-item">3</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Simplified HTML & CSS Learning Resource.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

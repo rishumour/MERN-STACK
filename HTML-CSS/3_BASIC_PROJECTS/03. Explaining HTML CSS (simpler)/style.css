@@ -1,0 +1,202 @@
+/* =========================================
+   1. VARIABLES & RESETS
+   ========================================= */
+:root {
+  --bg-color: #121212;
+  --card-bg: #1e1e1e;
+  --text-main: #e0e0e0;
+  --text-muted: #a0a0a0;
+  --primary: #bb86fc;
+  --secondary: #03dac6;
+  --border-color: #333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+h1, h2, h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+/* =========================================
+   2. HEADER & NAVIGATION
+   ========================================= */
+.header {
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  padding: 1rem 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--secondary);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* =========================================
+   3. MAIN LAYOUT & CARDS
+   ========================================= */
+.main-content {
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; /* Spaces out the chapters */
+}
+
+.chapter {
+  scroll-margin-top: 100px; /* Prevents sticky header from covering titles */
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-top: 1.5rem;
+}
+
+.code-box pre {
+  background-color: #000;
+  color: #0f0; /* Classic terminal green for easy reading */
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+/* =========================================
+   4. BOX MODEL DIAGRAM (STATIC)
+   ========================================= */
+.box {
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.margin {
+  background-color: rgba(255, 165, 0, 0.2);
+  border: 2px dashed orange;
+}
+
+.border {
+  background-color: rgba(255, 255, 0, 0.2);
+  border: 4px solid yellow;
+  margin-top: 1rem;
+}
+
+.padding {
+  background-color: rgba(0, 128, 0, 0.2);
+  border: 2px dashed green;
+  margin-top: 1rem;
+}
+
+.content {
+  background-color: rgba(0, 191, 255, 0.5);
+  border: 1px solid deepskyblue;
+  margin-top: 1rem;
+  padding: 2rem;
+  color: #fff;
+}
+
+/* =========================================
+   5. FLEXBOX DEMO
+   ========================================= */
+.flex-demo {
+  display: flex;
+  gap: 2rem;
+}
+
+.demo-sidebar {
+  flex: 1;
+}
+
+.demo-sidebar ul {
+  list-style: none;
+  color: var(--text-muted);
+  margin-top: 1rem;
+}
+
+.demo-sidebar li {
+  margin-bottom: 0.5rem;
+  background: #000;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.demo-canvas {
+  flex: 2;
+  background-color: #000;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.flex-item {
+  background-color: var(--primary);
+  color: #121212;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-radius: 4px;
+}
+
+/* =========================================
+   6. FOOTER
+   ========================================= */
+.footer {
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+}

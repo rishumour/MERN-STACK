@@ -1,0 +1,160 @@
+1. Selectors and Properties
+***************************
+
+=> Before you style something, you have to target it. Selectors point to the HTML element, and properties change its appearance.
+The Types of Selectors:
+
+    -> Element Selector: Targets all elements of that tag type.
+
+    -> Class Selector (.): Targets specific elements you’ve labeled. Reusable.
+
+    -> ID Selector (#): Targets a unique element. Use sparingly.
+
+=> Example:
+    /* Element Selector */
+    p {
+    color: gray; /* Makes all paragraph text gray */
+    }
+
+    /* Class Selector (Best for reusable styles) */
+    .highlight-text {
+    background-color: yellow;
+    }
+
+    /* ID Selector (Unique, only use once per page) */
+    #main-navigation {
+    background-color: black;
+    }
+
+__________________________________________________________________________________________________________________________________________________________________
+
+2. The Box Model
+****************
+
+=> In CSS, everything is a box. Whenever you create an element, it is wrapped in a series of layers. Understanding this prevents 90% of layout headaches.
+The Four Layers:
+
+    -> Content: The actual text or image.
+
+    -> Padding: The space inside the element, between the content and the border. (Breathing room for text).
+
+    -> Border: The line wrapped around the padding.
+
+    -> Margin: The space outside the element. It pushes other elements away.
+
+=> Example:
+    .box {
+        width: 300px;
+        padding: 20px;       /* Space inside the border */
+        border: 5px solid;   /* The boundary line */
+        margin: 40px;        /* Space outside the border */
+    }
+
+=> Always add box-sizing: border-box; to your CSS. By default, padding makes boxes wider than the width you set. border-box forces the padding to stay inside the width you specified.
+__________________________________________________________________________________________________________________________________________________________________
+
+3. Position
+***********
+
+=> The position property dictates how an element sits on the page and how it reacts to scrolling or other elements.
+
+    -> static (Default): Elements just flow naturally down the page.
+
+    -> relative: Stays in the normal flow, but allows you to nudge it (top, left, etc.) relative to where it normally would be.
+
+    -> absolute: Breaks free from the normal flow. It positions itself precisely relative to its nearest parent element that has a position other than static.
+
+    -> fixed: Sticks to the screen/viewport. It stays in the exact same spot even when you scroll (like a sticky chat widget).
+
+=> Example: 
+    /* Example of an absolute badge inside a relative card */
+    .card-container {
+        position: relative; /* Acts as the anchor */
+        width: 300px;
+    }
+
+    .sale-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px; /* Pins the badge to the top-right corner of the card */
+    }
+
+__________________________________________________________________________________________________________________________________________________________________
+
+4. Flexbox (One-Dimensional Layouts)
+************************************
+
+=> Flexbox is designed for laying items out in a single row or a single column. It excels at aligning items and distributing space.
+Core Concept:
+
+=> You make a parent container a display: flex;, and its immediate children instantly become flexible.
+
+Example: 
+    .navbar {
+        display: flex;
+        justify-content: space-between; /* Pushes items to opposite sides (e.g., Logo left, Links right) */
+        align-items: center;            /* Centers items vertically */
+    }
+
+__________________________________________________________________________________________________________________________________________________________________
+
+5. CSS Grid (Two-Dimensional Layouts)
+*************************************
+
+=> While Flexbox handles rows or columns, CSS Grid handles both at the same time. It is perfect for entire page layouts or complex magazine-style grids.
+
+    .photo-gallery {
+        display: grid;
+        /* Creates 3 columns, each taking up an equal fraction (fr) of space */
+        grid-template-columns: 1fr 1fr 1fr; 
+        gap: 20px; /* Spacing between the grid items */
+    }
+__________________________________________________________________________________________________________________________________________________________________
+
+6. Specificity and Inheritance
+******************************
+
+=> Ever wrote CSS and wondered, "Why is the text not turning blue?!" It's likely due to Specificity.
+Inheritance
+
+=> Some styles pass down from parent to child automatically (like font choices or color), while others don't (like borders or margins).
+
+=> Inheritance: Some styles pass down from parent to child automatically (like font choices or color), while others don't (like borders or margins).
+
+=> Specificity Hierarchy (The Weight System)
+
+    -> If two conflicting rules apply to the same element, the browser uses a scoring system to decide who wins:
+
+        > Inline styles (written directly in the HTML <div style="...">) - Strongest
+
+        > IDs (#header)
+
+        > Classes / Pseudo-classes (.menu, :hover)
+
+        > Elements (p, div) - Weakest
+
+=> Example:
+
+    * If a paragraph has the class "text-green"... */
+    p { color: red; }                   /* Score: 0-0-1 (Weak) */
+    .text-green { color: green; }       /* Score: 0-1-0 (Wins! Text turns green) */
+
+__________________________________________________________________________________________________________________________________________________________________
+
+7. Media Queries (Responsive Design)
+************************************
+
+=> Websites need to look good on phones, tablets, and massive monitors. Media queries allow you to apply CSS only if certain conditions are met (like screen width).
+
+=> Example:
+/* Default styles for mobile phones */
+body {
+  font-size: 14px;
+}
+
+    /* Desktop styles: Applies ONLY when the screen is 768px wide or wider */
+    @media (min-width: 768px) {
+    body {
+        font-size: 18px; /* Text gets bigger on desktop */
+    }
+    }
