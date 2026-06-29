@@ -6,14 +6,14 @@ JavaScript data types define what kind of value a variable can hold. JavaScript 
 
 JavaScript has 8 common data types: 7 primitive types and 1 object type. [web:59][web:71]
 
-- Number: numeric values like `10`, `3.14`, `Infinity`, and `NaN`. [web:59][web:71]
-- String: text inside quotes like `"hello"`. [web:59][web:71]
-- Boolean: logical values, `true` or `false`. [web:59][web:71]
-- Undefined: a variable declared but not assigned a value. [web:59][web:73]
-- Null: intentional absence of a value. [web:59][web:73]
-- BigInt: very large integers. [web:59][web:73]
-- Symbol: unique identifiers. [web:59][web:73]
-- Object: collections of data, including arrays, functions, dates, maps, and sets. [web:59][web:74]
+- `Number`: numeric values like `10`, `3.14`, `Infinity`, and `NaN`. [web:59][web:71]
+- `String`: text inside quotes like `"hello"`. [web:59][web:71]
+- `Boolean`: logical values, `true` or `false`. [web:59][web:71]
+- `Undefined`: a variable declared but not assigned a value. [web:59][web:73]
+- `Null`: intentional absence of a value. [web:59][web:73]
+- `BigInt`: very large integers. [web:59][web:73]
+- `Symbol`: unique identifiers. [web:59][web:73]
+- `Object`: collections of data, including arrays, functions, dates, maps, and sets. [web:59][web:74]
 
 ## Examples
 
