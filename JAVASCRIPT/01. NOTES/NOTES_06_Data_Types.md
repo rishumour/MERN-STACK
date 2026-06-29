@@ -41,7 +41,7 @@ console.log(typeof undefined); // "undefined"
 console.log(typeof null);      // "object" (special case)
 ```
 
-## Notes
+## NaN
 
 Primitive values are simple and immutable, while objects are more complex and can store multiple related values. Also, `null` is a special case because `typeof null` returns `"object"` in JavaScript. 
 
