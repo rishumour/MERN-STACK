@@ -44,3 +44,16 @@ console.log(typeof null);      // "object" (special case)
 ## Notes
 
 Primitive values are simple and immutable, while objects are more complex and can store multiple related values. Also, `null` is a special case because `typeof null` returns `"object"` in JavaScript. 
+
+
+in JavaScript, `NaN` is not a separate data type. It is a special numeric value that means “Not a Number,” and it belongs to the `Number` type. 
+
+## Example
+
+```javascript
+console.log(typeof NaN); // "number"
+```
+
+## Important point
+
+`NaN` is used when a numeric operation fails or produces an undefined result, like `0 / 0`. 
