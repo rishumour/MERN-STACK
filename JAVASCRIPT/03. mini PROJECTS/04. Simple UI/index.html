@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Number</title>
+  <style>
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f9;
+    }
+
+    .container {
+      text-align: center;
+      background: white;
+      padding: 3rem 5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    #numberDisplay {
+      font-size: 5rem;
+      font-weight: bold;
+      color: #2d3748;
+      margin: 0 0 1.5rem 0;
+    }
+
+    
+    button {
+      padding: 12px 24px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #2563eb;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div id="numberDisplay">0</div>
+    <button id="replaceBtn">Replace Number</button>
+  </div>
+
+  <script>
+    
+    const numberDisplay = document.getElementById('numberDisplay');
+    const replaceBtn = document.getElementById('replaceBtn');
+
+    
+    replaceBtn.addEventListener('click', () => {
+      const randomNumber = Math.floor(Math.random() * 100) + 1;
+      numberDisplay.textContent = randomNumber;
+    });
+  </script>
+
+</body>
+</html>
