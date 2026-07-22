@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Elements States -->
+    <!-- Disable & Enable -->
+    <!-- If disable true -->
+    <!-- User cannot type in input & click button -->
+    <input type = "text" id = "username" placeholder = "Enter Name">
+    <br>
+    <button id = "submitBtn">Submit</button>
+    <br>
+    <br>
+    <button id = "disableBtn">Disable Submit</button>
+    <button id = "enableBtn">Enable Submit</button>
+    <br>
+    <br>
+    <button id = "show">Show para</button>
+    <button id = "hide">Hide para</button>
+    <p id = "para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis voluptatibus minima, numquam ab suscipit, autem blanditiis veritatis inventore molestiae deserunt error asperiores officiis ut aut consequuntur placeat id qui. Tenetur suscipit consequuntur aliquam id eius similique eos nam laudantium iure, beatae in quae est ipsa autem commodi earum, eligendi nihil?</p>
+
+    <script>
+        const submitBtn = document.getElementById('submitBtn')
+        const disableBtn = document.getElementById('disableBtn')
+        const enableBtn = document.getElementById('enableBtn')
+
+        disableBtn.addEventListener('click', ()=>{
+            submitBtn.disabled = true
+        })
+
+        enableBtn.addEventListener('click', ()=>{
+            submitBtn.disabled = false
+        })
+
+        // Show & Hide para
+        const para = document.getElementById('para')
+        const show = document.getElementById('show')
+        const hide = document.getElementById('hide')
+
+        show.addEventListener('click', ()=>{
+            para.style.display = "block"
+        })
+
+        hide.addEventListener('click', ()=>{
+            para.style.display = "none"
+        })
+        
+    </script>
+</body>
+</html>

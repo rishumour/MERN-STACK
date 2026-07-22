@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+</head>
+<body>
+    <h2>To-Do List</h2>
+    
+    <div>
+        <input type="text" id="taskInput" placeholder="Enter a task">
+        <button id="addBtn">Add</button>
+        <button id="removeLastBtn">Remove Last Task</button>
+    </div>
+    
+    <ul id="taskList"></ul>
+
+    <script>
+        const taskInput = document.getElementById('taskInput');
+        const addBtn = document.getElementById('addBtn');
+        const removeLastBtn = document.getElementById('removeLastBtn');
+        const taskList = document.getElementById('taskList');
+
+        taskInput.addEventListener('input', () => {
+            taskInput.style.border = '';
+        });
+
+        addBtn.addEventListener('click', () => {
+            const taskText = taskInput.value.trim();
+
+            if (taskText === '') {
+                taskInput.style.border = '2px solid red';
+                return;
+            }
+
+            const li = document.createElement('li');
+            li.innerText = taskText + ' ';
+
+            const removeBtn = document.createElement('button');
+            removeBtn.innerText = 'Remove';
+
+            removeBtn.addEventListener('click', () => {
+                li.remove(); 
+            });
+
+            li.append(removeBtn);
+
+            taskList.append(li);
+
+            taskInput.value = '';
+            taskInput.style.border = '';
+        });
+
+        removeLastBtn.addEventListener('click', () => {
+            if (taskList.lastElementChild) {
+                taskList.removeChild(taskList.lastElementChild);
+            }
+        });
+    </script>
+</body>
+</html>
