@@ -4,17 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>To-Do List</h2>
-    
-    <div>
-        <input type="text" id="taskInput" placeholder="Enter a task">
-        <button id="addBtn">Add</button>
-        <button id="removeLastBtn">Remove Last Task</button>
+    <div class="todo-app">
+        <div class="todo-header">
+            <h2>To-Do List</h2>
+            <p class="todo-subtitle">Keep track of your tasks</p>
+        </div>
+        
+        <div class="input-section">
+            <input type="text" id="taskInput" placeholder="Enter a task..." autocomplete="off">
+            <button id="addBtn">Add</button>
+        </div>
+        
+        <div class="list-section">
+            <ul id="taskList"></ul>
+        </div>
+        
+        <div class="action-section">
+            <button id="removeLastBtn">Remove Last Task</button>
+        </div>
     </div>
-    
-    <ul id="taskList"></ul>
 
     <script>
         const taskInput = document.getElementById('taskInput');
@@ -23,19 +34,24 @@
         const taskList = document.getElementById('taskList');
 
         taskInput.addEventListener('input', () => {
-            taskInput.style.border = '';
+            taskInput.classList.remove('input-error');
         });
 
         addBtn.addEventListener('click', () => {
             const taskText = taskInput.value.trim();
 
             if (taskText === '') {
-                taskInput.style.border = '2px solid red';
+                taskInput.classList.remove('input-error');
+                void taskInput.offsetWidth; // Trigger reflow for shake animation
+                taskInput.classList.add('input-error');
                 return;
             }
 
             const li = document.createElement('li');
-            li.innerText = taskText + ' ';
+            
+            const taskSpan = document.createElement('span');
+            taskSpan.innerText = taskText;
+            li.appendChild(taskSpan);
 
             const removeBtn = document.createElement('button');
             removeBtn.innerText = 'Remove';
@@ -49,7 +65,7 @@
             taskList.append(li);
 
             taskInput.value = '';
-            taskInput.style.border = '';
+            taskInput.classList.remove('input-error');
         });
 
         removeLastBtn.addEventListener('click', () => {

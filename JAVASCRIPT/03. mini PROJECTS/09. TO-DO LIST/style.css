@@ -1,0 +1,270 @@
+/* Google Fonts - Plus Jakarta Sans */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg-gradient: linear-gradient(135deg, #fdfbf7 0%, #f3ece0 100%);
+    --card-bg: #ffffff;
+    --card-border: #eadecc;
+    --primary: #a27b5c;
+    /* Roasted caramel/espresso */
+    --primary-hover: #8c6c50;
+    --primary-active: #5c4738;
+    --danger: #e06d53;
+    /* Warm coral red */
+    --danger-hover: #c94f35;
+    --danger-active: #9e3620;
+    --text-main: #3e362e;
+    /* Deep espresso brown */
+    --text-muted: #8a7b6e;
+    /* Warm coffee taupe */
+    --input-bg: #faf7f2;
+    --input-border: #eadecc;
+    --shadow: 0 20px 40px rgba(62, 54, 46, 0.05), 0 8px 24px rgba(62, 54, 46, 0.04);
+    --glow: 0 0 15px rgba(162, 123, 92, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-main);
+    padding: 20px;
+}
+
+.todo-app {
+    background: var(--card-bg);
+    width: 100%;
+    max-width: 485px;
+    border-radius: 24px;
+    border: 1px solid var(--card-border);
+    padding: 36px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.todo-header {
+    text-align: center;
+}
+
+.todo-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--text-main) 0%, var(--primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+}
+
+.todo-subtitle {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.input-section {
+    display: flex;
+    gap: 12px;
+    position: relative;
+}
+
+#taskInput {
+    flex: 1;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    padding: 14px 18px;
+    border-radius: 14px;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+    font-weight: 500;
+}
+
+#taskInput:focus {
+    border-color: var(--primary);
+    box-shadow: var(--glow);
+    background: #ffffff;
+}
+
+#taskInput::placeholder {
+    color: var(--text-muted);
+    opacity: 0.6;
+}
+
+#taskInput.input-error {
+    border-color: var(--danger) !important;
+    box-shadow: 0 0 15px rgba(224, 109, 83, 0.15) !important;
+    animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20%,
+    60% {
+        transform: translateX(-6px);
+    }
+
+    40%,
+    80% {
+        transform: translateX(6px);
+    }
+}
+
+#addBtn {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+    border: none;
+    padding: 14px 24px;
+    border-radius: 14px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(162, 123, 92, 0.15);
+}
+
+#addBtn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(162, 123, 92, 0.25);
+}
+
+#addBtn:active {
+    transform: translateY(1px);
+}
+
+.list-section {
+    max-height: 280px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+/* Custom Scrollbar for list container */
+.list-section::-webkit-scrollbar {
+    width: 6px;
+}
+
+.list-section::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.list-section::-webkit-scrollbar-thumb {
+    background: rgba(162, 123, 92, 0.2);
+    border-radius: 10px;
+}
+
+.list-section::-webkit-scrollbar-thumb:hover {
+    background: rgba(162, 123, 92, 0.3);
+}
+
+#taskList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#taskList li {
+    background: #faf7f2;
+    border: 1px solid #f0e6d6;
+    padding: 14px 16px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    word-break: break-word;
+    animation: slideIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: all 0.25s ease;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+#taskList li:hover {
+    background: #ffffff;
+    border-color: var(--primary);
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(62, 54, 46, 0.03);
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Remove button inside list items */
+#taskList li button {
+    background: rgba(224, 109, 83, 0.08);
+    border: 1px solid rgba(224, 109, 83, 0.15);
+    color: var(--danger);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-left: 12px;
+    flex-shrink: 0;
+}
+
+#taskList li button:hover {
+    background: var(--danger-hover);
+    border-color: var(--danger-hover);
+    color: #ffffff;
+}
+
+#taskList li button:active {
+    transform: scale(0.95);
+}
+
+.action-section {
+    border-top: 1px solid #f0e6d6;
+    padding-top: 20px;
+}
+
+#removeLastBtn {
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--input-border);
+    color: var(--text-muted);
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#removeLastBtn:hover {
+    background: #faf7f2;
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+#removeLastBtn:active {
+    transform: translateY(1px);
+}

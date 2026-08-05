@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Bank | Constructor Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="brand-container">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 17L12 22L22 17" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 12L12 17L22 12" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h1 class="brand-logo">AURA BANK</h1>
+        </div>
+        <p class="brand-tagline">Constructor Dashboard & Ledger System</p>
+    </header>
+
+    <main>
+        <!-- Forms Section -->
+        <section class="forms-section">
+            <!-- Create Account Panel -->
+            <div class="glass-panel">
+                <h2 class="cyan-accent">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="8.5" cy="7" r="4" />
+                        <line x1="20" y1="8" x2="20" y2="14" />
+                        <line x1="23" y1="11" x2="17" y2="11" />
+                    </svg>
+                    Create Account
+                </h2>
+                <form id="accountForm">
+                    <div class="form-group">
+                        <label for="customerName">Customer Name</label>
+                        <input type="text" id="customerName" placeholder="Enter full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="balance">Initial Balance ($)</label>
+                        <input type="number" id="balance" placeholder="0.00" min="0" step="0.01" required>
+                    </div>
+                    <button type="submit">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
+                        Create Account
+                    </button>
+                </form>
+            </div>
+
+            <!-- Deposit Panel -->
+            <div class="glass-panel">
+                <h2 class="success-accent">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19" />
+                        <polyline points="19 12 12 19 5 12" />
+                    </svg>
+                    Deposit Funds
+                </h2>
+                <form id="depositForm">
+                    <div class="form-group">
+                        <label for="accNum">Account Number</label>
+                        <input type="text" placeholder="Paste account number" id="accNum" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="amnt">Amount ($)</label>
+                        <input type="number" placeholder="Enter amount to deposit" id="amnt" min="0.01" step="0.01" required>
+                    </div>
+                    <button type="submit">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <polyline points="19 12 12 19 5 12" />
+                        </svg>
+                        Deposit Funds
+                    </button>
+                </form>
+            </div>
+
+            <!-- Withdraw Panel -->
+            <div class="glass-panel">
+                <h2 class="error-accent">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="19" x2="12" y2="5" />
+                        <polyline points="5 12 12 5 19 12" />
+                    </svg>
+                    Withdraw Funds
+                </h2>
+                <form id="withdrawForm">
+                    <div class="form-group">
+                        <label for="withdrawAccNum">Account Number</label>
+                        <input type="text" placeholder="Paste account number" id="withdrawAccNum" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="withdrawAmnt">Amount ($)</label>
+                        <input type="number" placeholder="Enter amount to withdraw" id="withdrawAmnt" min="0.01" step="0.01" required>
+                    </div>
+                    <button type="submit">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="19" x2="12" y2="5" />
+                            <polyline points="5 12 12 5 19 12" />
+                        </svg>
+                        Withdraw Funds
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Accounts Listing Section -->
+        <section class="accounts-section">
+            <div class="glass-panel" style="flex-grow: 1; display: flex; flex-direction: column;">
+                <div class="accounts-header">
+                    <h2>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="16" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                        Active Accounts
+                    </h2>
+                    <input type="text" id="accountSearch" class="search-bar" placeholder="Search customer name...">
+                </div>
+
+                <div class="accounts-container" id="accountsContainer">
+                    <div class="no-accounts">
+                        No active accounts registered yet. Use the form on the left to create one.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast notification area -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <footer>
+        <p>&copy; 2026 Aura Bank. All rights reserved. Created with Antigravity.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
