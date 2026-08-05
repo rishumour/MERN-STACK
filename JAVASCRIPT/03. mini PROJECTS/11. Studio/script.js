@@ -42,13 +42,16 @@ document.addEventListener("mouseenter", (e) => {
     }
 })
 
-// this gives a onclick effect
-document.addEventListener("mousedown", () => {
-    box.style.transform = "translate(-50%, -50%) scale(0.7)"
-    box.style.backgroundColor = "rgba(0, 0, 0, 0.8)" 
-})
+const triggers = document.querySelectorAll(".hover-trigger")
 
-document.addEventListener("mouseup", () => {
-    box.style.transform = "translate(-50%, -50%) scale(1)"
-    box.style.backgroundColor = "" 
+triggers.forEach(trigger => {
+    const cards = trigger.querySelectorAll(".stack-card")
+
+    trigger.addEventListener("mouseenter", () => {
+        cards.forEach(card => card.classList.add("show"))
+    })
+
+    trigger.addEventListener("mouseleave", () => {
+        cards.forEach(card => card.classList.remove("show"))
+    })
 })
